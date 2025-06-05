@@ -2,273 +2,1497 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Photobooth - The Ultimate Event Photobooth App</title>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WC17BNZSV7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-WC17BNZSV7');
+	</script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./images/logo.png">
-    <link rel="apple-touch-icon" href="./images/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/logo.png">
-    <link rel="manifest" href="./site.webmanifest">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
 
-        body {
-            background: linear-gradient(135deg, #E39EAF 0%, #d17a91 100%);
-            color: white;
-            min-height: 100vh;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            flex: 1;
-        }
 
-        .header {
-            text-align: center;
-            padding: 40px 0;
-        }
+	<link rel="canonical" href="https://dslrbooth.com/">
 
-        .logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+	<link rel="icon" type="image/png" href="images/favicon.png">
 
-        .logo:hover {
-            transform: scale(1.1);
-        }
+	<!-- GOOGLE FONTS -->
 
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding: 60px 0;
-        }
+	<meta charset="utf-8">
+	<title>Neon Photo Booth Selfie Box - Professional Photo Booth Software</title>
 
-        .hero-content {
-            flex: 1;
-            min-width: 300px;
-        }
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
 
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
+	<!-- run: gulp at root of project to combine/minify to above -->
 
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-        }
+	<!-- BOOTSTRAP CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+	<!-- FONT ICONS -->
+	<link href="css/flaticon.css" rel="stylesheet">
 
-        .subtitle {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
+	<!-- PLUGINS STYLESHEET -->
+	<link href="css/menu.css" rel="stylesheet">
+	<link id="effect" href="css/fade-down.css" media="all" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet">
+	<link href="css/owl.theme.default.min.css" rel="stylesheet">
 
-        .features {
-            padding: 60px 0;
-            text-align: center;
-        }
+	<!-- ON SCROLL ANIMATION -->
+	<link href="css/animate.css" rel="stylesheet">
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
+	<!-- TEMPLATE CSS -->
+	<link href="css/style.css" rel="stylesheet">
 
-        .feature {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
 
-        .feature:hover {
-            transform: translateY(-5px);
-        }
+	<!-- RESPONSIVE CSS -->
+	<link href="css/responsive.css" rel="stylesheet">
 
-        .app-store-button,
-        .play-store-button {
-            display: inline-block;
-            margin: 15px;
-            transition: transform 0.3s ease;
-        }
+	<style>
+		:root {
+			--primary-color: #CA5D73;
+			--primary-hover: #b54d63;
+			--secondary-color: #8B4B5E;
+			--secondary-hover: #7a3d4e;
+		}
 
-        .app-store-button:hover,
-        .play-store-button:hover {
-            transform: scale(1.05);
-        }
+		.btn-primary {
+			background-color: var(--primary-color) !important;
+			border-color: var(--primary-color) !important;
+		}
 
-        .app-store-button img,
-        .play-store-button img {
-            height: 50px;
-            width: auto;
-        }
+		.btn-primary:hover {
+			background-color: var(--primary-hover) !important;
+			border-color: var(--primary-hover) !important;
+		}
 
-        .download-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
+		.btn-secondary {
+			background-color: var(--secondary-color) !important;
+			border-color: var(--secondary-color) !important;
+		}
 
-        /* Footer Styles */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.15);
-            margin-top: auto;
-        }
+		.btn-secondary:hover {
+			background-color: var(--secondary-hover) !important;
+			border-color: var(--secondary-hover) !important;
+		}
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 10px;
-        }
+		.tra-primary-hover:hover {
+			background-color: var(--primary-color) !important;
+			border-color: var(--primary-color) !important;
+		}
 
-        .footer a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
+		.tra-secondary-hover:hover {
+			background-color: var(--secondary-color) !important;
+			border-color: var(--secondary-color) !important;
+		}
 
-        .footer a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
+		.orange-red-color {
+			color: var(--primary-color) !important;
+		}
 
-        .footer-text {
-            font-size: 0.9em;
-            opacity: 0.7;
-        }
+		.bg-orange-red {
+			background-color: var(--primary-color) !important;
+		}
 
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
+		.img-fluid {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
 
-            h1 {
-                font-size: 2em;
-            }
+		picture {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+		.content-image {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em;
-            }
+		@media (max-width: 768px) {
+			picture {
+				max-width: 100%;
+			}
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+			.img-fluid {
+				max-width: 100%;
+			}
+		}
+
+		.fbox-img {
+			width: 100%;
+			aspect-ratio: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+			border-radius: 8px;
+			overflow: hidden;
+			background: #fff;
+		}
+
+		.fbox-img picture {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.fbox-img .img-fluid {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		@media (max-width: 768px) {
+			.fbox-img {
+				aspect-ratio: 1;
+				padding: 5px;
+			}
+		}
+
+		.bg-whitesmoke-gradient {
+			background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+		}
+
+		@media (max-width: 768px) {
+			.fbox-img {
+				min-height: 150px;
+			}
+		}
+
+		.carousel {
+			width: 100%;
+			max-width: 600px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.carousel-item {
+			aspect-ratio: 3/4;
+			overflow: hidden;
+			border-radius: 18px;
+			box-shadow: 0 8px 32px rgba(202, 93, 115, 0.10), 0 1.5px 8px rgba(0, 0, 0, 0.08);
+			background: #fff;
+		}
+
+		.carousel-item img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 18px;
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 56px;
+			height: 56px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(202, 93, 115, 0.18);
+			border-radius: 50%;
+			opacity: 1;
+			z-index: 2;
+			transition: background 0.25s, box-shadow 0.25s;
+			box-shadow: 0 2px 12px rgba(202, 93, 115, 0.18);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+		}
+
+		.carousel-control-prev:hover,
+		.carousel-control-next:hover {
+			background: linear-gradient(135deg, #CA5D73 60%, #8B4B5E 100%);
+			box-shadow: 0 4px 24px rgba(202, 93, 115, 0.25);
+		}
+
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 6px #fff);
+			background-size: 70% 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		.carousel-indicators {
+			display: none !important;
+		}
+
+		@media (max-width: 768px) {
+
+			.carousel-indicators button,
+			.carousel-indicators button.active {
+				width: 16px;
+				height: 6px;
+			}
+		}
+	</style>
+
+	<meta name="description" content="Photo Booth Software for your Canon/Nikon/Sony dslr, mirrorless, GoPro camera or Webcam & pc/mac
+laptop. FREE 
+Trial. Most straightforward and loved photo booth software out there.">
+	<meta name="google-site-verification" content="dHpnmHMlT2sO6Tspbjcsobh4NJf2vN_VlWMBNRFF4YY">
 </head>
 
-<body>
-    <div class="container">
-        <header class="header">
-            <img src="./images/logo.png" alt="Neon Photobooth Logo" class="logo">
-        </header>
+<body class="normal-header">
+	<!-- Google tag (gtag.js) -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1RLKM874KH"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-1RLKM874KH');
+	</script>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>THE ULTIMATE EVENT PHOTOBOOTH FOR YOUR SMARTPHONE!</h1>
-                <p class="subtitle">Create stunning photo experiences for any event. Choose your layout, add custom
-                    text, backgrounds, and stickers, then run your photobooth live at your event today!</p>
-                <div class="download-buttons">
-                    <a href="https://apps.apple.com/app/6744656614" class="app-store-button">
-                        <img src="./images/app-store-badge.svg" alt="Download on the App Store">
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic"
-                        class="play-store-button">
-                        <img src="./images/google-play-badge.svg" alt="Get it on Google Play">
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="./images/hero-devices.svg" alt="Neon Photobooth on iPhone and Android">
-            </div>
-        </section>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/jquery.scrollto.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+	<script src="js/custom.js"></script>
 
-        <section class="features">
-            <h2>Powerful Features for Every Event</h2>
-            <div class="feature-grid">
-                <div class="feature">
-                    <h3>Custom Templates</h3>
-                    <p>Choose from a wide variety of professionally designed templates or create your own. Perfect for
-                        weddings, birthdays, corporate events, and more.</p>
-                </div>
-                <div class="feature">
-                    <h3>Advanced Editor</h3>
-                    <p>Our intuitive editor lets you customize every detail - add text, stickers, filters, and
-                        backgrounds. Create the perfect look for your event.</p>
-                </div>
-                <div class="feature">
-                    <h3>Smart Camera</h3>
-                    <p>Automated photo capture with countdown timers, gesture detection, and instant previews. Perfect
-                        for hands-free operation during events.</p>
-                </div>
-                <div class="feature">
-                    <h3>Instant Sharing</h3>
-                    <p>Share photos instantly via email, text, or social media. Print directly to AirPrint (iOS) or
-                        Google Cloud Print (Android) enabled printers.</p>
-                </div>
-                <div class="feature">
-                    <h3>Event Mode</h3>
-                    <p>Run your photobooth live with customizable settings, guest books, and photo galleries. Perfect
-                        for managing large events.</p>
-                </div>
-                <div class="feature">
-                    <h3>Rich Content Library</h3>
-                    <p>Access hundreds of premium templates and thousands of stickers, frames, and effects. Regular
-                        updates with new content for every occasion.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+	<!-- PAGE CONTENT
+    ============================================= -->
+	<div id="page" class="page">
+		<!-- HEADER ============================================= -->
+		<header id="header" class="header tra-menu navbar-light">
+			<div class="header-wrapper">
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="./privacy_policy.html">Privacy Policy</a>
-            <a href="./terms_of_use.html">Terms of Use</a>
-        </div>
-        <p class="footer-text">© 2024 Neon Photobooth. All rights reserved.</p>
-    </footer>
+
+				<!-- MOBILE HEADER -->
+				<div class="wsmobileheader clearfix">
+					<span class="smllogo">
+						<picture>
+							<source srcset="images/logo-01.webp" type="image/webp">
+							<source srcset="images/logo-01.png" type="image/png">
+							<img src="images/logo-01.png" alt="mobile-logo">
+						</picture>
+					</span>
+					<span id="wsnavtoggle" class="wsanimated-arrow"><span></span></span>
+				</div>
+
+
+				<!-- NAVIGATION MENU -->
+				<div class="wsmainfull menu clearfix">
+					<div class="center-logo wsmainwp clearfix">
+
+						<!-- HEADER LOGO -->
+						<div class="desktoplogo">
+							<a href="#" class="logo-black">
+								<picture>
+									<source id="logo-black" srcset="images/logo-01.webp" type="image/webp">
+									<source srcset="images/logo-01.png" type="image/png">
+									<img src="images/logo-01.png" alt="Neon Photo Booth Selfie Box logo">
+								</picture>
+							</a>
+						</div>
+						<div class="desktoplogo">
+							<a href="#" class="logo-white">
+								<picture>
+									<source id="logo-white" srcset="images/logo-white.webp" type="image/webp">
+									<source srcset="images/logo-white.png" type="image/png">
+									<img src="images/logo-white.png" alt="Neon Photo Booth Selfie Box logo">
+								</picture>
+							</a>
+						</div>
+
+
+						<!-- MAIN MENU -->
+						<nav class="wsmenu clearfix">
+							<ul class="wsmenu-list nav-skyblue-hover">
+								<li class="nl-simple" aria-haspopup="true"><a href="index.html">Home</a></li>
+								<li class="nl-simple" aria-haspopup="true"><a href="privacy_policy.html">Privacy
+										Policy</a></li>
+								<li class="nl-simple" aria-haspopup="true"><a href="terms_of_use.html">Terms of Use</a>
+								</li>
+								<li class="nl-simple" aria-haspopup="true"><a
+										href="https://play.google.com/store/apps/details?id=neon.photobooth.magic#details-reviews"
+										target="_blank">What's New</a></li>
+
+							</ul>
+						</nav> <!-- END MAIN MENU -->
+
+
+					</div>
+				</div> <!-- END NAVIGATION MENU -->
+
+
+			</div> <!-- End header-wrapper -->
+		</header> <!-- END HEADER -->
+
+		<div id="content">
+			<!-- PAGE CONTENT
+        ============================================= -->
+			<div id="page" class="page">
+				<!-- HEADER ============================================= -->
+
+				<!-- HERO-1 ============================================= -->
+				<section id="hero-1" class="bg-scroll hero-section division">
+					<div class="container">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- HERO TEXT -->
+							<div class="col-md-7 col-lg-6">
+								<div class="hero-1-txt white-color wow fadeInRight">
+									<!-- Title -->
+									<h3 class="h3-xs mb-5">Easy to use, incredibly powerful</h3>
+									<h1 class="h1-lg mb-5">Neon Photo Booth Selfie Box</h1>
+
+									<!-- Text -->
+									<p class="p-xl">Create stunning videos from your images with Neon Photo Booth Selfie
+										Box. Capture perfect moments anytime, anywhere with our easy-to-use interface.
+										<br> <span style="font-size: 12pt !important;">Transform your photos into
+											engaging videos with just a few taps. Perfect for social media, events, and
+											personal memories.</span>
+									</p>
+
+									<!-- Buttons Group -->
+									<div class="btns-group mb-30 d-flex flex-column">
+										<a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic" target="_blank"
+											class="white-apple btn btn-primary tra-white-hover mb-15">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M3.609 1.814L13.792 12 3.609 22.186c-.14-.14-.25-.306-.35-.48L12.5 12 3.259 2.294c.1-.174.21-.34.35-.48zM14.5 12l8.241 9.706c.1-.174.159-.36.159-.56V2.854c0-.2-.059-.386-.159-.56L14.5 12zM2.5 2.854c0-.2.059-.386.159-.56L2.5 2.854zM2.5 21.146c0 .2.059.386.159.56L2.5 21.146z"
+													fill="currentColor" />
+											</svg>
+											<span>Get it on Google Play</span>
+										</a>
+										<a href="https://apps.apple.com/app/6744656614" target="_blank"
+											class="white-apple btn btn-secondary tra-white-hover">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="20" viewBox="0 0 12 20"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M9.3 0H2.59C1.16 0 0 1.16 0 2.59V16.58C0 18.01 1.16 19.17 2.59 19.17H9.31C10.74 19.17 11.9 18.01 11.9 16.58V2.59C11.9 1.16 10.74 0 9.31 0H9.3ZM5.41 0.94H6.48C6.59 0.94 6.67 1.03 6.67 1.13C6.67 1.23 6.58 1.32 6.48 1.32H5.41C5.3 1.32 5.22 1.23 5.22 1.13C5.22 1.03 5.31 0.94 5.41 0.94ZM9.71 17.47H2.18C2.01 17.47 1.88 17.33 1.88 17.17L1.9 2.09C1.9 1.92 2.04 1.79 2.21 1.79H3.51C3.68 1.79 3.81 1.93 3.81 2.1V2.26C3.81 2.43 3.95 2.56 4.11 2.56H7.86C8.03 2.56 8.16 2.42 8.16 2.26V2.1C8.16 1.93 8.3 1.8 8.46 1.8H9.69C9.86 1.8 9.99 1.94 9.99 2.1V17.18C10 17.35 9.87 17.48 9.7 17.48L9.71 17.47Z">
+												</path>
+											</svg>
+											<span>Download on App Store</span>
+										</a>
+									</div>
+
+									<!-- Advantages List -->
+									<ul class="advantages">
+										<li class="last-li">
+											<p>Free trial | No credit card required</p>
+										</li>
+									</ul>
+
+								</div>
+							</div> <!-- END HERO TEXT -->
+
+
+							<!-- HERO IMAGE -->
+
+							<div class="col-md-5 col-lg-6">
+								<div class="container-lg my-3">
+									<div class="carousel slide" data-bs-ride="carousel" id="imageCarousel">
+										<!-- Carousel indicators -->
+										<div class="carousel-indicators">
+											<!-- Indicators will be added by JavaScript -->
+										</div>
+										<div class="carousel-inner">
+											<!-- Carousel items will be added here by JavaScript -->
+										</div>
+										<button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
+											data-bs-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next" type="button" data-bs-target="#imageCarousel"
+											data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+									</div>
+								</div>
+								<!--							<div class="hero-1-img wow fadeInLeft">-->
+								<!--								
+                    <picture>
+                        <source srcset="/images/webp/hero-1-img.webp" type="image/webp" >
+                        <source srcset="/images/hero-1-img.png" type="image/png" >
+			<img class="img-fluid" src="/images/hero-1-img.png" alt="hero-image">-->
+
+								<!--							</div>-->
+							</div>
+
+
+						</div> <!-- End row -->
+					</div> <!-- End container -->
+
+
+					<!-- WAVE SHAPE BOTTOM -->
+					<div class="wave-shape-bottom">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 130">
+							<path fill="#ffffff" fill-opacity="1"
+								d="M0,64L120,80C240,96,480,128,720,128C960,128,1200,96,1320,80L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+							</path>
+						</svg>
+					</div>
+
+
+				</section> <!-- END HERO-1 -->
+
+
+				<!-- FEATURES-2
+            ============================================= -->
+				<section id="features-2" class="mt-30 wide-60 features-section division">
+					<div class="container">
+						<!-- FEATURES-2 WRAPPER -->
+						<div class="fbox-2-wrapper text-center">
+							<div class="row row-cols-1 row-cols-md-3">
+
+
+								<!-- FEATURE BOX #1 -->
+								<div class="col mobile-bottom-space-30">
+									<div class="fbox-5 wow fadeInUp">
+										<!-- Icon -->
+										<div class="ico-95 shape-ico orange-red-color">
+											<picture>
+												<source srcset="images/stack-of-photos.webp" type="image/webp">
+												<source srcset="images/stack-of-photos.png" type="image/png">
+												<img class="img-fluid" src="images/stack-of-photos.png" alt="Stack of photo booth photos">
+											</picture>
+										</div>
+
+										<!-- Text -->
+										<div class="fbox-txt-center">
+											<!-- Title -->
+											<h5 class="h5-md" data-translate="capture">Capture</h5>
+
+											<!-- Text -->
+											<p class="p-lg">Capture photos anytime, anywhere with auto timer. Create
+												stunning videos from your photos with just a few taps. Perfect for
+												creating memories and sharing on social media.</p>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- FEATURE BOX #2 -->
+
+
+
+								<!-- FEATURE BOX #3 -->
+								<div class="col">
+									<div class="fbox-5 wow fadeInUp">
+
+										<!-- Icon -->
+										<div class="ico-95 shape-ico orange-red-color">
+
+											<picture>
+												<source srcset="images/share.webp" type="image/webp">
+												<source srcset="images/share.png" type="image/png">
+												<img class="img-fluid" src="images/share.png"
+													alt="phone showing print shared from NeonBooth photo booth app">
+											</picture>
+										</div>
+
+										<!-- Text -->
+										<div class="fbox-txt-center mb-20">
+
+											<!-- Title -->
+											<h5 class="h5-md" data-translate="share">Share</h5>
+
+											<!-- Text -->
+											<p class="p-lg">Share your photos and videos instantly via email or text
+												message. Keep your memories safe and easily accessible.</p>
+
+										</div>
+
+									</div>
+								</div>
+								<div class="col">
+									<div class="fbox-5 wow fadeInUp">
+										<!-- Icon -->
+										<div class="ico-85 shape-ico orange-red-color">
+											<picture>
+												<source srcset="images/print.webp" type="image/webp">
+												<source srcset="images/print.png" type="image/png">
+												<img class="img-fluid" src="images/print.png" alt="AI generating captions for photos">
+											</picture>
+										</div>
+
+										<!-- Text -->
+										<div class="fbox-txt-center mb-20">
+											<!-- Title -->
+											<h5 class="h5-md" data-translate="ai_caption">AI Caption</h5>
+
+											<!-- Text -->
+											<p class="p-lg">Let our AI generate creative and engaging captions for your
+												photos. Perfect for social media posts and sharing your memories with
+												style.</p>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div> <!-- END FEATURES-2 WRAPPER -->
+
+
+					</div> <!-- End container -->
+				</section> <!-- END FEATURES-2 -->
+				<hr class="divider">
+
+				<section id="content-7" class="content-7 wide-60 content-section division mt-50">
+					<div class="container">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- TEXT BLOCK -->
+							<div class="col-md-6 order-last order-md-2">
+								<div class="txt-block left-column wow fadeInLeft">
+									<!-- Title -->
+									<h1 class="h1-sm mobile-center mb-30" data-translate="your_booth">Your own photo
+										booth</h1>
+									<p class="p-xs mobile-center">Transform your smartphone into a professional photo
+										booth with Neon Photo Booth Selfie Box. Capture perfect moments anytime,
+										anywhere with our easy-to-use interface.</p>
+
+									<!-- List -->
+									<p class="p-xs mobile-center">
+										Create stunning videos from your photos with just a few taps. Add auto timer for
+										perfect selfies, and share your memories instantly via email or text message.
+									</p>
+									<p class="p-xs mobile-center">
+										Perfect for parties, events, or just capturing everyday moments. No complicated
+										setup needed - just download and start creating beautiful memories.
+									</p>
+
+									<div class="btns-group mobile-center mb-30 d-flex flex-column">
+										<a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic" target="_blank"
+											class="white-apple btn btn-primary tra-primary-hover mb-15">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M3.609 1.814L13.792 12 3.609 22.186c-.14-.14-.25-.306-.35-.48L12.5 12 3.259 2.294c.1-.174.21-.34.35-.48zM14.5 12l8.241 9.706c.1-.174.159-.36.159-.56V2.854c0-.2-.059-.386-.159-.56L14.5 12zM2.5 2.854c0-.2.059-.386.159-.56L2.5 2.854zM2.5 21.146c0 .2.059.386.159.56L2.5 21.146z"
+													fill="currentColor" />
+											</svg>
+											<span>Get it on Google Play</span>
+										</a>
+										<a href="https://apps.apple.com/app/6744656614" target="_blank"
+											class="white-apple btn btn-secondary tra-secondary-hover">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="20" viewBox="0 0 12 20"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M9.3 0H2.59C1.16 0 0 1.16 0 2.59V16.58C0 18.01 1.16 19.17 2.59 19.17H9.31C10.74 19.17 11.9 18.01 11.9 16.58V2.59C11.9 1.16 10.74 0 9.31 0H9.3ZM5.41 0.94H6.48C6.59 0.94 6.67 1.03 6.67 1.13C6.67 1.23 6.58 1.32 6.48 1.32H5.41C5.3 1.32 5.22 1.23 5.22 1.13C5.22 1.03 5.31 0.94 5.41 0.94ZM9.71 17.47H2.18C2.01 17.47 1.88 17.33 1.88 17.17L1.9 2.09C1.9 1.92 2.04 1.79 2.21 1.79H3.51C3.68 1.79 3.81 1.93 3.81 2.1V2.26C3.81 2.43 3.95 2.56 4.11 2.56H7.86C8.03 2.56 8.16 2.42 8.16 2.26V2.1C8.16 1.93 8.3 1.8 8.46 1.8H9.69C9.86 1.8 9.99 1.94 9.99 2.1V17.18C10 17.35 9.87 17.48 9.7 17.48L9.71 17.47Z">
+												</path>
+											</svg>
+											<span>Download on App Store</span>
+										</a>
+									</div>
+								</div>
+							</div> <!-- END TEXT BLOCK -->
+
+
+							<!-- IMAGE BLOCK -->
+							<div class="col-md-6 order-first order-md-2">
+								<div class="content-7-img wow fadeInRight">
+
+									<picture>
+										<source srcset="images/joy.webp" type="image/webp">
+										<source srcset="images/joy.png" type="image/png">
+										<img class="img-fluid" src="images/joy.png" alt="content-image">
+									</picture>
+								</div>
+							</div>
+
+
+						</div> <!-- End row -->
+					</div> <!-- End container -->
+				</section> <!-- END CONTENT-7 -->
+
+				<hr class="divider">
+
+				<!-- FEATURES-8
+            ============================================= -->
+				<section id="features-8" class="wide-60 features-section division">
+					<div class="container">
+
+
+						<!-- SECTION TITLE -->
+						<div class="row mt-50 justify-content-center">
+							<div class="col-lg-10 col-xl-8">
+								<div class="section-title title-01 mb-70">
+
+									<!-- Title -->
+									<h1 class="h1-md" data-translate="more_than">More than just a photobooth</h1>
+
+									<!-- Text -->
+
+									<p class="p-xl">Create amazing photo and video experiences with Neon Photo Booth
+										Selfie Box.</p>
+
+								</div>
+							</div>
+						</div>
+
+
+						<!-- FEATURES-8 WRAPPER -->
+						<div class="fbox-8-wrapper text-center">
+							<div class="row row-cols-1 row-cols-md-4">
+
+
+								<!-- FEATURE BOX 360 BOOTH -->
+								<div class="col">
+									<div class="fbox-8 mb-40 wow fadeInUp">
+
+										<!-- Image -->
+										<div class="fbox-img bg-whitesmoke-gradient">
+
+											<picture>
+												<source srcset="images/img-21.webp" type="image/webp">
+												<source srcset="images/img-21.png" type="image/png">
+												<img class="img-fluid" src="images/img-21.png" alt="feature-icon">
+											</picture>
+										</div>
+
+										<!-- Title -->
+										<h5 class="h5-md">360 Booth</h5>
+
+										<!-- Text -->
+										<p class="p-lg">Capture your guests from all angles for a unique customized
+											video experience using your smartphone.</p>
+
+									</div>
+								</div>
+
+
+								<!-- FEATURE BOX GLAMBOOTH -->
+								<div class="col">
+									<div class="fbox-8 mb-40 wow fadeInUp">
+
+										<!-- Image -->
+										<div class="fbox-img bg-whitesmoke-gradient">
+
+											<picture>
+												<source srcset="images/img-22.webp" type="image/webp">
+												<source srcset="images/img-22.png" type="image/png">
+												<img class="img-fluid" src="images/img-22.png" alt="feature-icon">
+											</picture>
+										</div>
+
+										<!-- Title -->
+										<h5 class="h5-md">Glam Booth</h5>
+
+										<!-- Text -->
+										<p class="p-lg">Give your guests beautiful flawless skin while our black & white
+											filter takes your photos and videos to the next level.</p>
+
+									</div>
+								</div>
+
+
+								<!-- FEATURE BOX MIRROR BOOTH -->
+								<div class="col">
+									<div class="fbox-8 mb-40 wow fadeInUp">
+
+										<!-- Image -->
+										<div class="fbox-img bg-whitesmoke-gradient">
+
+											<picture>
+												<source srcset="images/img-23.webp" type="image/webp">
+												<source srcset="images/img-23.png" type="image/png">
+												<img class="img-fluid" src="images/img-23.png" alt="feature-icon">
+											</picture>
+										</div>
+
+										<!-- Title -->
+										<h5 class="h5-md">Edit Template</h5>
+
+										<!-- Text -->
+										<p class="p-lg">Customize your photo templates with our easy-to-use editor. Add
+											text, stickers, and effects to create unique memories.</p>
+
+									</div>
+								</div>
+								<div class="col">
+									<div class="fbox-8 mb-40 wow fadeInUp">
+
+										<!-- Image -->
+										<div class="fbox-img bg-whitesmoke-gradient">
+
+											<picture>
+												<source srcset="images/img-24.webp" type="image/webp">
+												<source srcset="images/img-24.png" type="image/png">
+												<img class="img-fluid" src="images/img-24.png" alt="feature-icon">
+											</picture>
+										</div>
+
+										<!-- Title -->
+										<h5 class="h5-md">Albums Moment</h5>
+
+										<!-- Text -->
+										<p class="p-lg">Create beautiful photo albums to preserve your special moments.
+											Organize and share your memories with friends and family.</p>
+
+									</div>
+								</div>
+							</div> <!-- End row -->
+						</div> <!-- END FEATURES-8 WRAPPER -->
+
+
+					</div> <!-- End container -->
+				</section> <!-- END FEATURES-8 -->
+
+				<!-- CONTENT-3
+            ============================================= -->
+				<section id="content-3" class="content-3 wide-60 content-section division">
+					<div class="container">
+
+
+						<!-- SECTION TITLE -->
+						<div class="row justify-content-center">
+							<div class="col-lg-10 col-xl-8">
+								<div class="section-title title-01">
+
+									<!-- Title -->
+									<h1 class="h1-md" data-translate="local_storage">Local Storage & Offline
+										Functionality</h1>
+
+									<!-- Text -->
+									<p class="p-xl">All your photos and videos are stored directly on your device. No
+										internet connection required - use all features of the app even when offline.
+									</p>
+
+								</div>
+							</div>
+						</div>
+
+
+						<!-- TOP ROW -->
+						<div class="top-row">
+							<div class="row d-flex align-items-center">
+
+
+								<!-- IMAGE BLOCK -->
+								<div class="col-md-5 col-lg-6">
+									<div class="img-block left-column wow fadeInRight">
+
+										<picture>
+											<source srcset="images/img-05.webp" type="image/webp">
+											<source srcset="images/img-05.png" type="image/png">
+											<img class="img-fluid" src="images/img-05.png" alt="content-image">
+										</picture>
+									</div>
+								</div>
+
+
+								<!-- TEXT BLOCK -->
+								<div class="col-md-7 col-lg-6">
+
+									<div class="txt-block right-column wow fadeInLeft">
+										<!-- TEXT BOX -->
+										<div class="txt-box">
+
+											<!-- Title -->
+											<h5 class="h5-lg mobile-center">Local Storage</h5>
+
+											<!-- List -->
+											<p class="p-lg mobile-center">All photos and videos are stored directly on
+												your device. No login or internet connection required - access and view
+												your saved memories anytime, anywhere.</p>
+
+										</div>
+										<div class="txt-box mb-20">
+
+											<!-- Title -->
+											<h5 class="h5-lg mobile-center">Works Offline</h5>
+
+											<!-- Text -->
+											<p class="p-lg mobile-center">The app works completely offline. Capture
+												photos, record videos, and edit them even without an internet
+												connection. When you're online, easily share your beautiful moments with
+												friends and family.</p>
+										</div>
+
+									</div>
+								</div> <!-- END TEXT BLOCK -->
+
+
+							</div>
+						</div> <!-- END TOP ROW -->
+
+
+
+					</div> <!-- End container -->
+				</section> <!-- END CONTENT-3 -->
+
+
+				<section id="content-2" class="content-2 wide-60 pt-90 content-section division">
+					<div class="container">
+						<div class="row d-flex align-items-center">
+
+
+							<!-- IMAGE BLOCK -->
+							<div class="col-md-5 col-lg-6">
+								<div class="rel img-block left-column video-preview wow fadeInRight">
+
+									<picture>
+										<source srcset="images/tablet-01.webp" type="image/webp">
+										<source srcset="images/tablet-01.png" type="image/png">
+										<img class="img-fluid" src="images/tablet-01.png"
+											alt="Photo booth sharing interface showing photos and videos">
+									</picture>
+
+								</div>
+							</div>
+
+
+							<!-- TEXT BLOCK -->
+							<div class="col-md-7 col-lg-6">
+								<div class="txt-block right-column wow fadeInLeft">
+
+									<!-- Title -->
+									<h1 class="h1-md mobile-center" data-translate="instant_sharing">Instant Sharing
+									</h1>
+
+									<!-- List -->
+									<p class="p-lg mobile-center">Share your photos and videos instantly with friends
+										and family. Our easy-to-use interface makes it simple to share your memories
+										through various platforms.</p>
+
+									<div class="btns-group mobile-center wow fadeInUp d-flex flex-column">
+										<a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic" target="_blank"
+											class="white-apple btn btn-primary tra-primary-hover mb-15">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M3.609 1.814L13.792 12 3.609 22.186c-.14-.14-.25-.306-.35-.48L12.5 12 3.259 2.294c.1-.174.21-.34.35-.48zM14.5 12l8.241 9.706c.1-.174.159-.36.159-.56V2.854c0-.2-.059-.386-.159-.56L14.5 12zM2.5 2.854c0-.2.059-.386.159-.56L2.5 2.854zM2.5 21.146c0 .2.059.386.159.56L2.5 21.146z"
+													fill="currentColor" />
+											</svg>
+											<span>Get it on Google Play</span>
+										</a>
+										<a href="https://apps.apple.com/app/6744656614" target="_blank"
+											class="white-apple btn btn-secondary tra-secondary-hover">
+											<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="20" viewBox="0 0 12 20"
+												style="margin-top: -4px;margin-right: 2px;">
+												<path
+													d="M9.3 0H2.59C1.16 0 0 1.16 0 2.59V16.58C0 18.01 1.16 19.17 2.59 19.17H9.31C10.74 19.17 11.9 18.01 11.9 16.58V2.59C11.9 1.16 10.74 0 9.31 0H9.3ZM5.41 0.94H6.48C6.59 0.94 6.67 1.03 6.67 1.13C6.67 1.23 6.58 1.32 6.48 1.32H5.41C5.3 1.32 5.22 1.23 5.22 1.13C5.22 1.03 5.31 0.94 5.41 0.94ZM9.71 17.47H2.18C2.01 17.47 1.88 17.33 1.88 17.17L1.9 2.09C1.9 1.92 2.04 1.79 2.21 1.79H3.51C3.68 1.79 3.81 1.93 3.81 2.1V2.26C3.81 2.43 3.95 2.56 4.11 2.56H7.86C8.03 2.56 8.16 2.42 8.16 2.26V2.1C8.16 1.93 8.3 1.8 8.46 1.8H9.69C9.86 1.8 9.99 1.94 9.99 2.1V17.18C10 17.35 9.87 17.48 9.7 17.48L9.71 17.47Z">
+												</path>
+											</svg>
+											<span>Download on App Store</span>
+										</a>
+									</div>
+								</div>
+							</div> <!-- END TEXT BLOCK -->
+
+
+						</div> <!-- End row -->
+					</div> <!-- End container -->
+				</section> <!-- END CONTENT-2 -->
+
+
+				<!-- TESTIMONIALS-1
+            ============================================= -->
+				<section id="reviews-1" class="bg-whitesmoke-gradient wide-100 reviews-section division">
+					<div class="container">
+
+
+						<!-- SECTION TITLE -->
+						<div class="row justify-content-center  mt-70">
+							<div class="col-lg-10 col-xl-8">
+								<div class="section-title title-01 mb-70">
+
+									<!-- Title -->
+									<h1 class="h1-md" data-translate="reviews">Reviews From Our Customers</h1>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- TESTIMONIALS CONTENT -->
+						<div class="row">
+							<div class="col">
+								<div class="owl-carousel owl-theme reviews-1-wrapper">
+
+
+									<!-- TESTIMONIAL #1 -->
+									<div class="review-1">
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+										<div class="review-1-txt">
+											<p class="p-lg">Ứng dụng tuyệt vời! Giao diện rất trực quan và chất lượng
+												ảnh rất tốt. Hoàn hảo cho việc chụp ảnh tại các bữa tiệc và sự kiện.</p>
+											<div class="author-data clearfix">
+												<h6 class="h6-xl">Minh T.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #2 -->
+									<div class="review-1">
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+										<div class="review-1-txt">
+											<p class="p-lg">Tôi thích cách dễ dàng tùy chỉnh mẫu và thêm hiệu ứng. Tính
+												năng hoạt động offline thực sự hữu ích cho các sự kiện không có internet
+												ổn định.</p>
+											<div class="author-data clearfix">
+												<h6 class="h6-xl">Hương L.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #3 -->
+									<div class="review-1">
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+										<div class="review-1-txt">
+											<p class="p-lg">Tính năng tạo chú thích AI thật tuyệt vời! Nó giúp việc chia
+												sẻ lên mạng xã hội trở nên dễ dàng và thú vị hơn nhiều. Rất đáng để thử!
+											</p>
+											<div class="author-data clearfix">
+												<h6 class="h6-xl">Anh K.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #4 -->
+									<div class="review-1">
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+										<div class="review-1-txt">
+											<p class="p-lg">Hoàn hảo cho công việc chụp ảnh đám cưới của tôi! Tính năng
+												album giúp tôi sắp xếp ảnh đẹp mắt, và khách hàng rất thích khả năng
+												chia sẻ ngay lập tức.</p>
+											<div class="author-data clearfix">
+												<h6 class="h6-xl">Thảo N.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #5 -->
+									<div class="review-1">
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+										<div class="review-1-txt">
+											<p class="p-lg">Đã sử dụng tại bữa tiệc sinh nhật của con gái và mọi người
+												đều rất thích! Các mẫu ảnh dễ thương và tính năng chia sẻ giúp phụ huynh
+												dễ dàng lấy ảnh.</p>
+											<div class="author-data clearfix">
+												<h6 class="h6-xl">Linh P.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- TESTIMONIAL #6 -->
+									<div class="review-1">
+
+										<!-- Quote Icon -->
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+
+										<!-- Text -->
+										<div class="review-1-txt">
+
+											<!-- Text -->
+											<p class="p-lg">I got this software for my daughter's birthday. I played
+												with the free version and
+												learned how to set It
+												up. It was a lot of fun. Once I was happy with it I activated the
+												subscription. It was so easy.
+												My daughter and her friends had a lot fun with it at her surprise
+												birthday party.</p>
+
+											<!-- Testimonial Author -->
+											<div class="author-data clearfix">
+
+												<!-- Testimonial Author -->
+
+
+												<h6 class="h6-xl">Freddy P.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+
+
+
+											</div> <!-- End Testimonial Author -->
+
+										</div> <!-- End Text -->
+
+									</div> <!-- END TESTIMONIAL #6 -->
+
+
+									<!-- TESTIMONIAL #7 -->
+									<div class="review-1">
+
+										<!-- Quote Icon -->
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+
+										<!-- Text -->
+										<div class="review-1-txt">
+
+											<!-- Text -->
+											<p class="p-lg">Love this app. Connects so easy to my photo booth. Guest
+												love using it to share or
+												print their
+												photos after the experience!
+												Easy to customize for each event.</p>
+
+											<!-- Testimonial Author -->
+											<div class="author-data clearfix">
+												<!-- Testimonial Author -->
+
+
+												<h6 class="h6-xl">Tracy T.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #8 -->
+									<div class="review-1">
+
+										<!-- Quote Icon -->
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+
+										<!-- Text -->
+										<div class="review-1-txt">
+
+											<!-- Text -->
+											<p class="p-lg">Love using this app for my photo booth events. Subscription
+												is worth it as it
+												includes cloud hosting,
+												email, and sms messages. Frees up my photobooth to take more photos.
+												Guests love it!</p>
+
+											<!-- Testimonial Author -->
+											<div class="author-data clearfix">
+												<!-- Testimonial Author -->
+
+
+												<h6 class="h6-xl">Abby P.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- TESTIMONIAL #9 -->
+									<div class="review-1">
+
+										<!-- Quote Icon -->
+										<div class="review-1-ico ico-25">
+											<span class="flaticon-left-quote"></span>
+										</div>
+
+										<!-- Text -->
+										<div class="review-1-txt">
+
+											<!-- Text -->
+											<p class="p-lg">Allow myself and attendees to navigate their sessions
+												seamlessly using this
+												software. You won't regret the
+												initial or recurring cost if it means keeping your customers happy and
+												business operating
+												smoothly.</p>
+
+											<!-- Testimonial Author -->
+											<div class="author-data clearfix">
+												<!-- Testimonial Author -->
+
+
+												<h6 class="h6-xl">Anna S.</h6>
+												<div class="review-rating ico-15 yellow-color">
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+													<span class="flaticon-star-1"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- STATISTIC-2 -->
+				<section id="statistic-2" class="wide-100 statistic-section division">
+					<div class="container">
+						<div class="row d-flex align-items-center">
+							<div class="col-lg-6">
+								<div class="txt-block right-column wow fadeInLeft">
+									<p class="p-xl">Thousands of users around the world are already using our Neon Photo
+										Booth Selfie Box app.</p>
+									<p>Join the ranks of elite photographers and elevate your photo booth game with Neon
+										Photo Booth Selfie Box. Trusted by professionals worldwide, our powerful app
+										will take your photo booth to the next level. Say goodbye to complicated and
+										expensive apps, and hello to stunning, high-quality photos every time. Try our
+										app and see the difference for yourself!</p>
+								</div>
+								<div class="btns-group mb-30 d-flex flex-column">
+									<a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic" target="_blank"
+										class="white-apple btn btn-primary tra-primary-hover mb-15">
+										<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24"
+											style="margin-top: -4px;margin-right: 2px;">
+											<path
+												d="M3.609 1.814L13.792 12 3.609 22.186c-.14-.14-.25-.306-.35-.48L12.5 12 3.259 2.294c.1-.174.21-.34.35-.48zM14.5 12l8.241 9.706c.1-.174.159-.36.159-.56V2.854c0-.2-.059-.386-.159-.56L14.5 12zM2.5 2.854c0-.2.059-.386.159-.56L2.5 2.854zM2.5 21.146c0 .2.059.386.159.56L2.5 21.146z"
+												fill="currentColor" />
+										</svg>
+										<span>Get it on Google Play</span>
+									</a>
+									<a href="https://apps.apple.com/app/6744656614" target="_blank"
+										class="white-apple btn btn-secondary tra-secondary-hover">
+										<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="20" viewBox="0 0 12 20"
+											style="margin-top: -4px;margin-right: 2px;">
+											<path
+												d="M9.3 0H2.59C1.16 0 0 1.16 0 2.59V16.58C0 18.01 1.16 19.17 2.59 19.17H9.31C10.74 19.17 11.9 18.01 11.9 16.58V2.59C11.9 1.16 10.74 0 9.31 0H9.3ZM5.41 0.94H6.48C6.59 0.94 6.67 1.03 6.67 1.13C6.67 1.23 6.58 1.32 6.48 1.32H5.41C5.3 1.32 5.22 1.23 5.22 1.13C5.22 1.03 5.31 0.94 5.41 0.94ZM9.71 17.47H2.18C2.01 17.47 1.88 17.33 1.88 17.17L1.9 2.09C1.9 1.92 2.04 1.79 2.21 1.79H3.51C3.68 1.79 3.81 1.93 3.81 2.1V2.26C3.81 2.43 3.95 2.56 4.11 2.56H7.86C8.03 2.56 8.16 2.42 8.16 2.26V2.1C8.16 1.93 8.3 1.8 8.46 1.8H9.69C9.86 1.8 9.99 1.94 9.99 2.1V17.18C10 17.35 9.87 17.48 9.7 17.48L9.71 17.47Z">
+											</path>
+										</svg>
+										<span>Download on App Store</span>
+									</a>
+								</div>
+							</div>
+
+							<div class="col-sm-5 col-md-4 col-lg-3 offset-sm-1 offset-md-2 offset-lg-1">
+								<div class="statistic-block wow fadeInUp text-center align-content-center">
+									<h1 class="h1-title-xs statistic-number millions"><span>Millions</span></h1>
+									<p class="p-lg mt-20">of photos & videos captured</p>
+								</div>
+							</div>
+
+							<div class="col-sm-5 col-md-4 col-lg-2">
+								<div class="statistic-block wow fadeInUp text-center align-content-center">
+									<picture>
+										<source srcset="images/badge.webp" type="image/webp">
+										<source srcset="images/badge.png" type="image/png">
+										<img class="img-fluid" src="images/badge.png" alt="5 star reviews of best photo booth app">
+									</picture>
+									<p class="p-lg txt-400">1000+ Ratings</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- CONTENT-4 -->
+				<section id="content-4" class="content-4 pt-80 content-section">
+					<div class="bg-inner bg-whitesmoke-gradient division">
+						<div class="container">
+							<div class="row d-flex flex-reverse align-items-center">
+								<div class="col-md-5 col-lg-6 mt-80 order-end order-md-2">
+									<div class="content-4-img left-column wow fadeInRight">
+										<picture>
+											<source srcset="images/img-01.webp" type="image/webp">
+											<source srcset="images/img-01.png" type="image/png">
+											<img class="img-fluid" src="images/img-01.png" alt="content-image">
+										</picture>
+									</div>
+								</div>
+
+								<div class="col-md-7 col-lg-6 order-first order-md-2">
+									<div class="txt-block right-column wow fadeInLeft">
+										<h1 class="h1-title-sm" data-translate="run_booth">Run your own booth today!
+										</h1>
+										<h4 class="h4-md">Fully functioning FREE trial to test out. Purchase when ready.
+										</h4>
+
+										<div class="btns-group mb-30 d-flex flex-column">
+											<a href="https://play.google.com/store/apps/details?id=neon.photobooth.magic" target="_blank"
+												class="white-apple btn btn-primary tra-primary-hover mb-15">
+												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+													viewBox="0 0 24 24" style="margin-top: -4px;margin-right: 2px;">
+													<path
+														d="M3.609 1.814L13.792 12 3.609 22.186c-.14-.14-.25-.306-.35-.48L12.5 12 3.259 2.294c.1-.174.21-.34.35-.48zM14.5 12l8.241 9.706c.1-.174.159-.36.159-.56V2.854c0-.2-.059-.386-.159-.56L14.5 12zM2.5 2.854c0-.2.059-.386.159-.56L2.5 2.854zM2.5 21.146c0 .2.059.386.159.56L2.5 21.146z"
+														fill="currentColor" />
+												</svg>
+												<span>Get it on Google Play</span>
+											</a>
+											<a href="https://apps.apple.com/app/6744656614" target="_blank"
+												class="white-apple btn btn-secondary tra-secondary-hover">
+												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="20"
+													viewBox="0 0 12 20" style="margin-top: -4px;margin-right: 2px;">
+													<path
+														d="M9.3 0H2.59C1.16 0 0 1.16 0 2.59V16.58C0 18.01 1.16 19.17 2.59 19.17H9.31C10.74 19.17 11.9 18.01 11.9 16.58V2.59C11.9 1.16 10.74 0 9.31 0H9.3ZM5.41 0.94H6.48C6.59 0.94 6.67 1.03 6.67 1.13C6.67 1.23 6.58 1.32 6.48 1.32H5.41C5.3 1.32 5.22 1.23 5.22 1.13C5.22 1.03 5.31 0.94 5.41 0.94ZM9.71 17.47H2.18C2.01 17.47 1.88 17.33 1.88 17.17L1.9 2.09C1.9 1.92 2.04 1.79 2.21 1.79H3.51C3.68 1.79 3.81 1.93 3.81 2.1V2.26C3.81 2.43 3.95 2.56 4.11 2.56H7.86C8.03 2.56 8.16 2.42 8.16 2.26V2.1C8.16 1.93 8.3 1.8 8.46 1.8H9.69C9.86 1.8 9.99 1.94 9.99 2.1V17.18C10 17.35 9.87 17.48 9.7 17.48L9.71 17.47Z">
+													</path>
+												</svg>
+												<span>Download on App Store</span>
+											</a>
+										</div>
+
+										<ul class="advantages clearfix">
+											<li class="first-li">
+												<p data-translate="free_trial">Free trial</p>
+											</li>
+											<li>
+												<p data-translate="easy_use">Easy to use</p>
+											</li>
+											<li class="last-li">
+												<p data-translate="no_card">No credit card required</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<footer id="footer-1" class="pt-80 mb-40">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="footer-info mb-40">
+									<picture>
+										<source srcset="images/logo-01.webp" type="image/webp">
+										<source srcset="images/logo-01.png" type="image/png">
+										<img class="footer-logo mb-10" src="images/logo-01.png" alt="Neon Photo Booth Selfie Box logo">
+									</picture>
+									<p class="p-sm">Running a photo booth shouldn't be complicated or expensive.
+										Download Neon Photo Booth Selfie Box from App Store or Google Play, and you have
+										a professional photo booth right in your pocket.</p>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-3 col-lg-4">
+								<div class="footer-links mb-40">
+									<h6 class="h6-xl" data-translate="legal">Legal</h6>
+									<ul class="foo-links text-secondary clearfix">
+										<li>
+											<p class="p-md"><a href="privacy_policy.html" data-translate="privacy">Privacy policy</a></p>
+										</li>
+										<li>
+											<p class="p-md"><a href="terms_of_use.html" data-translate="terms">Terms of
+													Use</a></p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+
+						<div class="bottom-footer">
+							<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+								<div class="col">
+									<div class="footer-copyright">
+										<p>© 2025 Neon Photo Booth Selfie Box All Rights Reserved</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+				<script>
+					// Language translations
+					const translations = {
+						'en': {
+							'home': 'Home',
+							'whats_new': "What's New",
+							'capture': 'Capture',
+							'share': 'Share',
+							'ai_caption': 'AI Caption',
+							'your_booth': 'Your own photo booth',
+							'more_than': 'More than just a photobooth',
+							'local_storage': 'Local Storage & Offline Functionality',
+							'instant_sharing': 'Instant Sharing',
+							'reviews': 'Reviews From Our Customers',
+							'run_booth': 'Run your own booth today!',
+							'free_trial': 'Free trial',
+							'easy_use': 'Easy to use',
+							'no_card': 'No credit card required',
+							'legal': 'Legal',
+							'privacy': 'Privacy policy',
+							'terms': 'Terms of Use'
+						}
+					};
+
+					// Function to change language
+					function changeLanguage(lang) {
+						document.querySelectorAll('[data-translate]').forEach(element => {
+							const key = element.getAttribute('data-translate');
+							if(translations[lang] && translations[lang][key]) {
+								element.textContent = translations[lang][key];
+							}
+						});
+
+						// Update active language in menu
+						document.querySelectorAll('.language-link').forEach(link => {
+							link.classList.remove('active');
+							if(link.getAttribute('data-lang') === lang) {
+								link.classList.add('active');
+							}
+						});
+					}
+
+					// Add click handlers to language links
+					document.addEventListener('DOMContentLoaded', function() {
+						document.querySelectorAll('.language-link').forEach(link => {
+							link.addEventListener('click', function(e) {
+								e.preventDefault();
+								const lang = this.getAttribute('data-lang');
+								changeLanguage(lang);
+							});
+						});
+					});
+
+					// Danh sách hình ảnh cho carousel
+					const carouselImages = [
+						{
+							webp: 'images/Photobooth_HD_1749105090300.webp',
+							png: 'images/Photobooth_HD_1749105090300.png',
+							alt: 'Image captured and edited by NeonBooth photo booth software'
+						},
+						{
+							webp: 'images/Photobooth_HD_1749105064515.webp',
+							png: 'images/Photobooth_HD_1749105064515.png',
+							alt: 'Image captured and edited by NeonBooth photo booth software'
+						},
+						{
+							webp: 'images/Photobooth_HD_1749105038513.webp',
+							png: 'images/Photobooth_HD_1749105038513.png',
+							alt: 'Image captured and edited by NeonBooth photo booth software'
+						}
+						// Thêm các hình ảnh khác vào đây
+					];
+
+					// Hàm tạo carousel items và indicators
+					function createCarouselItems() {
+						const carouselInner = document.querySelector('.carousel-inner');
+						const carouselIndicators = document.querySelector('.carousel-indicators');
+
+						carouselImages.forEach((image, index) => {
+							// Tạo carousel item
+							const item = document.createElement('div');
+							item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+
+							item.innerHTML = `
+                                <picture>
+                                    <source srcset="${image.webp}" type="image/webp">
+                                    <source srcset="${image.png}" type="image/png">
+                                    <img src="${image.png}" class="d-block w-100" alt="${image.alt}">
+                                </picture>
+                            `;
+
+							carouselInner.appendChild(item);
+
+							// Tạo indicator
+							const indicator = document.createElement('button');
+							indicator.type = 'button';
+							indicator.setAttribute('data-bs-target', '#imageCarousel');
+							indicator.setAttribute('data-bs-slide-to', index);
+							if(index === 0) {
+								indicator.className = 'active';
+								indicator.setAttribute('aria-current', 'true');
+							}
+							carouselIndicators.appendChild(indicator);
+						});
+					}
+
+					// Khởi tạo carousel khi trang đã load
+					document.addEventListener('DOMContentLoaded', function() {
+						createCarouselItems();
+
+						// Khởi tạo Bootstrap Carousel
+						new bootstrap.Carousel(document.getElementById('imageCarousel'), {
+							interval: 5000, // Thời gian chuyển slide (5 giây)
+							wrap: true,     // Cho phép loop
+							keyboard: true  // Cho phép điều khiển bằng bàn phím
+						});
+					});
+				</script>
+
 </body>
 
 </html>
